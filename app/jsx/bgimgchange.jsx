@@ -4,7 +4,11 @@ var React = require('react'),
 var TEST = React.createClass({
     render: function(){
         return(
-            <h1>哈哈</h1>
+            <div>
+                <img src="./img/coming-soon.png" />
+                <h1>最后一次监听</h1>
+            </div>
+
         )
     }
 })

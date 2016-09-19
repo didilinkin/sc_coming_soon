@@ -3,7 +3,7 @@ var React = require('react'),
 
 
 // 引用组件
-var TEST = require('./test');
+var TEST = require('./bgimgchange');
 
 // React生成Vdom
 ReactDOM.render(

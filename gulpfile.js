@@ -14,13 +14,11 @@ var gulp = require('gulp'), 						// gulp
 	connect = require('gulp-connect');				// gulp 服务器插件
 
     // 服务器
-    gulp.task('connectDev', function () {
-      connect.server({
-        name: 'Dev',
-        root: ['build'],
-        port: 8000,
-        livereload: true
-      });
+    gulp.task('connect', function () {
+        connect.server({
+          root: 'build',
+          livereload: true
+        });
     });
 
     // Sass编译任务
@@ -36,21 +34,16 @@ var gulp = require('gulp'), 						// gulp
 
     // HTML输出 / 修改路径
     gulp.task('html', function () {
-      return gulp.src('./app/*.html')
-        // 压缩
-        // .pipe(htmlmin({collapseWhitespace: true}))
-        // 更改位置
-        .pipe(gulp.dest('./build/'))
-        .pipe(connect.reload());
+        gulp.src('./app/*.html')
+            .pipe(gulp.dest('./build/'))
+            .pipe(connect.reload());
     });
 
     // JS输出(暂不需要,未进行配置)
-    // gulp.task('js', function () {
-    //   return gulp.src('./app/js/*.js')
-    //     // 更改位置
-    //     .pipe(gulp.dest('./build/js/'))
-    //     .pipe(connect.reload());
-    // });
+    gulp.task('js', function () {
+      return gulp.src('./build/*.js')
+        .pipe(connect.reload());
+    });
 
     // 图片压缩
 	gulp.task('imagemin',function(){
@@ -70,6 +63,10 @@ var gulp = require('gulp'), 						// gulp
 	    gulp.watch('app/sass/*.sass', ['sass']);
 		// 监听HTML文件修改，当HTML文件被修改则执行 HTML 任务
 		gulp.watch('app/*.html', ['html']);
+        // 监听webpack打包的build.js文件修改，当js文件被打包则执行 刷新任务
+		gulp.watch('build/js/*.js', ['html']);
 	});
 
-	gulp.task('default', ['sass','watch','imagemin'])
+	gulp.task('default', ['sass','watch','imagemin']);
+    // webpack打包之后执行刷新服务器功能
+    gulp.task('server', ['connect', 'watch']);
