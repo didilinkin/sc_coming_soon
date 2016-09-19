@@ -1,16 +1,16 @@
 var React = require('react'),
     ReactDOM = require('react-dom');
 
-var TEST = React.createClass({
+var BgImgChange = React.createClass({
     render: function(){
         return(
-            <div>
+            <bgimgchange>
                 <img src="./img/coming-soon.png" />
-                <h1>最后一次监听</h1>
-            </div>
+                <h1>修改虚拟DOM名称</h1>
+            </bgimgchange>
 
         )
     }
 })
 
-module.exports = TEST;
+module.exports = BgImgChange;

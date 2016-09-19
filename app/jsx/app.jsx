@@ -3,10 +3,10 @@ var React = require('react'),
 
 
 // 引用组件
-var TEST = require('./bgimgchange');
+var BgImgChange = require('./bgimgchange');
 
 // React生成Vdom
 ReactDOM.render(
-    <TEST></TEST>,
+    <BgImgChange></BgImgChange>,
     document.getElementById("content")
 );
