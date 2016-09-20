@@ -12,7 +12,6 @@ var BgImgChange = React.createClass({
                     <img className="" src="./img/coming-soon-copy-6.png" />
                 </bgimgchange>
             </div>
-
         )
     }
 })
