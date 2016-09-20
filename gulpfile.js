@@ -4,6 +4,7 @@ var gulp = require('gulp'), 						// gulp
 	htmlmin = require('gulp-htmlmin'),				// HTML压缩——gulp-htmlmin
 	imagemin = require('gulp-imagemin'),			// 图片压缩
 	pngquant = require('imagemin-pngquant'),		// PNG图片压缩
+    uglify = require('gulp-uglify'), 				// JS压缩
 	// CSS预处理任务
 	sass = require('gulp-sass'), 					// sass编译——gulp-sass
 	autoprefixer = require('gulp-autoprefixer'),	// 给css添加浏览器前缀——gulp-autoprefixer
@@ -40,9 +41,11 @@ var gulp = require('gulp'), 						// gulp
     });
 
     // JS输出(暂不需要,未进行配置)
-    gulp.task('js', function () {
-      return gulp.src('./build/*.js')
-        .pipe(connect.reload());
+    gulp.task('minjs', function () {
+        return gulp.src('./app/js/*.js')
+            .pipe(uglify())
+            .pipe(gulp.dest('./build/js'))
+            .pipe(connect.reload());
     });
 
     // 图片压缩
@@ -63,6 +66,8 @@ var gulp = require('gulp'), 						// gulp
 	    gulp.watch('app/sass/*.sass', ['sass']);
 		// 监听HTML文件修改，当HTML文件被修改则执行 HTML 任务
 		gulp.watch('app/*.html', ['html']);
+        // 监听js文件修改，当js文件被修改则执行 JS 任务
+		gulp.watch('app/js/*.js', ['minjs']);
         // 监听webpack打包的build.js文件修改，当js文件被打包则执行 刷新任务
 		gulp.watch('build/js/*.js', ['html']);
 	});

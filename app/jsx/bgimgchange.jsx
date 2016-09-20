@@ -4,10 +4,14 @@ var React = require('react'),
 var BgImgChange = React.createClass({
     render: function(){
         return(
-            <bgimgchange>
-                <img src="./img/coming-soon.png" />
-                <h1>修改虚拟DOM名称</h1>
-            </bgimgchange>
+            <div className="bgimg-wrap">
+                <bgimgchange id="bgimg-list">
+                    <img className="js-imgDisplay" src="./img/coming-soon.png" />
+                    <img className="" src="./img/coming-soon-copy-2.png" />
+                    <img className="" src="./img/coming-soon-copy-4.png" />
+                    <img className="" src="./img/coming-soon-copy-6.png" />
+                </bgimgchange>
+            </div>
 
         )
     }

@@ -1,0 +1,23 @@
+@charset "utf-8"
+// 混合    
+=w-h($width,$height)
+    width: $width
+    height: $height
+
+#content
+    position: absolute
+    overflow: hidden
+    +w-h(100%,100%)
+    #bgimg-list
+        z-index: 1
+        object-fit: contain
+        img
+            position: absolute
+            top: 0
+            z-index: 1
+            width: 100%
+        img.js-imgDisplay
+            position: absolute
+            z-index: 2
+            filter: alpha(Opacity=100)
+            opacity: 1
