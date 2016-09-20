@@ -1,7 +1,7 @@
 var React = require('react'),
     ReactDOM = require('react-dom');
 
-var BgImgChange = React.createClass({
+var BgImgChangeComponent = React.createClass({
     render: function(){
         return(
             <div className="bgimg-wrap">
@@ -16,4 +16,4 @@ var BgImgChange = React.createClass({
     }
 })
 
-module.exports = BgImgChange;
+module.exports = BgImgChangeComponent;
