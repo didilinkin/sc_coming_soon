@@ -4,6 +4,7 @@ var React = require('react'),
 
 // 引用组件
 var BgImgChangeComponent = require('./bgimgchange');
+var ContentTitleComponent = require('./contenttitle');
 
 // 集合组件内容
 var ContentComponent = React.createClass({
@@ -15,7 +16,10 @@ var ContentComponent = React.createClass({
     render:function(){
         console.log();
         return(
-            <BgImgChangeComponent></BgImgChangeComponent>
+            <div>
+                <BgImgChangeComponent></BgImgChangeComponent>
+                <ContentTitleComponent></ContentTitleComponent>
+            </div>
         )
     }
 });

@@ -4,12 +4,21 @@ var React = require('react'),
 var ContentTitleComponent = React.createClass({
     render: function(){
         return(
-            <ContentTitleComponent className="contentTitle">
-                <contentTitle className="contentTitle--h1">COMING</contentTitle>
-                <contentTitle className="contentTitle--h1">
-                    <em>very soon</em>
-                </contentTitle>
-            </ContentTitleComponent>
+            <div>
+                <contenttitle>{/* 大标题部分 */}
+                    <div className="contenttitle__box">
+                        <img src="./img/group-3@3x.png" />
+                    </div>
+                    <div className="contenttitle__flex"></div>{/* Flex占位 */}
+                </contenttitle>
+                <logo>
+                    <div className="logo__flex"></div>{/* flex占位 */}
+                    <logo-box>
+                        <img src="./img/aoffice-icon@3x.png" />
+                    </logo-box>
+                    <div className="logo__flex"></div>{/* flex占位 */}
+                </logo>
+            </div>
         )
     }
 })

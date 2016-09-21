@@ -10,6 +10,8 @@ var gulp = require('gulp'), 						// gulp
 	autoprefixer = require('gulp-autoprefixer'),	// 给css添加浏览器前缀——gulp-autoprefixer
 	sourcemaps = require('gulp-sourcemaps'),		// gulp-sourcemaps原始地址
 	// 特殊任务
+    gulpif = require('gulp-if'),                    // 排除某个文件
+    clean = require('gulp-clean'),                  // 清理文件夹
 	livereload = require('gulp-livereload'),		// 自动刷新——gulp-livereload
 	watchPath = require('gulp-watch-path'),		    // watch监控——gulp-watch-path
 	connect = require('gulp-connect');				// gulp 服务器插件
@@ -32,6 +34,16 @@ var gulp = require('gulp'), 						// gulp
 			// 添加LiveReload插件
 			livereload.listen();
 	});
+
+    // 添加前缀任务
+    gulp.task('autoprefixer', function() {
+      gulp.src(['./build/css/*.css'])
+      .pipe(autoprefixer({
+          browsers: ['last 2 versions'],
+          cascade: false
+      }))
+        .pipe(gulp.dest('./build/styles'));
+    });
 
     // HTML输出 / 修改路径
     gulp.task('html', function () {
@@ -59,6 +71,17 @@ var gulp = require('gulp'), 						// gulp
 			.pipe(gulp.dest('./build/img/'));
 	});
 
+    // 不编译的css挪移任务
+	gulp.task('cssto',function(){
+		gulp.src('./app/css/*.css')
+			.pipe(gulp.dest('./build/css/'));
+	});
+
+    // font挪移任务
+	gulp.task('fontsto',function(){
+		gulp.src('./app/fonts/*')
+			.pipe(gulp.dest('./build/fonts/'));
+	});
 
     // 在命令行使用 gulp watch 启动此任务
 	gulp.task('watch', function() {
@@ -74,4 +97,4 @@ var gulp = require('gulp'), 						// gulp
 
 	gulp.task('default', ['sass','watch','imagemin']);
     // webpack打包之后执行刷新服务器功能
-    gulp.task('server', ['connect', 'watch']);
+    gulp.task('server', ['connect','cssto','fontsto', 'watch']);

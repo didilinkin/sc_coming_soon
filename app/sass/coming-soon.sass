@@ -1,13 +1,19 @@
 @charset "utf-8"
-// 混合    
+// 混合
 =w-h($width,$height)
     width: $width
     height: $height
+=contenttitle
+    display: flex
+    position: absolute
+    z-index: 3
+    width: 100%
 
 #content
     position: absolute
     overflow: hidden
     +w-h(100%,100%)
+    // 背景图轮播部分
     #bgimg-list
         z-index: 1
         object-fit: contain
@@ -21,3 +27,28 @@
             z-index: 2
             filter: alpha(Opacity=100)
             opacity: 1
+// 内容文字部分
+contenttitle
+    +contenttitle
+    top: 0
+    .contenttitle__box
+        flex: 3.0
+        img
+            +w-h(55.21%,57.2%)
+            margin:
+                top: 20.1%
+                left: 32.12%
+    .contenttitle__flex
+        flex: 2.0
+logo 
+    +contenttitle
+    bottom: 0
+    .logo__flex
+        flex: 4.15
+    logo-box
+        flex: 1.7
+        img
+            width: 100%
+            object-fit: contain
+            margin:
+                bottom: 29.85%
