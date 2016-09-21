@@ -4,11 +4,11 @@ var React = require('react'),
 var ContentTitleComponent = React.createClass({
     render: function(){
         return(
-            <ContentTitleComponent className="coming-soon__contentTitle">
-                <coming-soon--h1 className="coming-soon--h1">COMING</coming-soon--h1>
-                <coming-soon--h1 className="coming-soon--h1">
+            <ContentTitleComponent className="contentTitle">
+                <contentTitle className="contentTitle--h1">COMING</contentTitle>
+                <contentTitle className="contentTitle--h1">
                     <em>very soon</em>
-                </coming-soon--h1>
+                </contentTitle>
             </ContentTitleComponent>
         )
     }
