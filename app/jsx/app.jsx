@@ -6,6 +6,13 @@ var React = require('react'),
 var BgImgChangeComponent = require('./bgimgchange');
 var ContentTitleComponent = require('./contenttitle');
 
+// 数组对象(顶级)
+var listArr = [
+    {userName:"leo"},
+    {userName:"bob"},
+    {userName:"lee"}
+]
+
 // 集合组件内容
 var ContentComponent = React.createClass({
     getInitialState:function(){
@@ -25,6 +32,6 @@ var ContentComponent = React.createClass({
 });
 // React生成Vdom
 ReactDOM.render(
-    <ContentComponent></ContentComponent>,
+    <ContentComponent />,
     document.getElementById("content")
 );

@@ -4,6 +4,7 @@ var React = require('react'),
 // 引用组件
 var IconComponent = require('./icon');
 
+
 var ContentTitleComponent = React.createClass({
     render: function(){
         return(
