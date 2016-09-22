@@ -50,37 +50,62 @@ icon
     .icon__box
         flex: 3
         // 虚拟出来包住四个标题文字
-        icontitle
-            display: inline-block
+        // icontitle
+        //     display: inline-block
+        //     width: 55.21%
+        //     margin:
+        //         left: 28%
+        //         bottom: 1%
+        //     ul.icon__ul
+        //         +m-p(0,0)
+        //         li
+        //             display: inline-block
+        //             background-color: #FFF
+        //             background-color: rgba(255,255,255,0.3)
+        //             list-style: none
+        //             p
+        //                 margin: .3em .4em
+        //                 color: #FFF
+        //                 font:
+        //                     family: Microsoft Yahei
+        //                     size: 1.2em
+        // 虚拟出来的标签——包住4个i标签，控制样式一直保持跟上面的文字图片相同
+        box
+            display: flex
             width: 55.21%
-            margin:
-                left: 28%
-                bottom: 1%
-            ul.icon__ul
-                +m-p(0,0)
-                li
-                    display: inline-block
-                    background-color: #FFF
-                    background-color: rgba(255,255,255,0.3)
-                    list-style: none
+            margin-left: 32.12%
+            title-icon
+                flex: 1
+                margin-bottom: 1%
+                // 文字盒子
+                title-icon__title
+                    display: block
+                    margin:
+                        right: 3%
+                        bottom: .5rem
+                        left: 3%
+                    background-color: rgba(255,255,255,0.32)
+                    text-align: center
+                    border-radius: 2px
                     p
+                        display: inline-block
                         margin: .3em .4em
                         color: #FFF
+                        cursor: pointer
                         font:
                             family: Microsoft Yahei
                             size: 1.2em
-        // 虚拟出来的标签——包住4个i标签，控制样式一直保持跟上面的文字图片相同
-        box
-            display: inline-block
-            width: 55.21%
-            margin-left: 32.12%
-            i
-                margin-right: 5%
-                font-size: 2rem !important
-                cursor: pointer
-                color: #FFF
-                &:hover
-                    color: rgba(255,255,255,0.4)
+                // 图标部分
+                i__box
+                    display: flex
+                    justify-content: center
+                    i
+                        font-size: 2rem !important
+                        text-align: center
+                        cursor: pointer
+                        color: #FFF
+                        &:hover
+                            color: rgba(255,255,255,0.4)
     .icon__flex
         flex: 2
 logo
