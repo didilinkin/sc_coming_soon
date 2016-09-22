@@ -52,7 +52,7 @@ icon
         // 虚拟出来的标签——包住4个i标签，控制样式一直保持跟上面的文字图片相同
         box
             display: flex
-            width: 55.21%
+            width: 70%
             margin-left: 32.12%
             title-icon
                 flex: 1
@@ -67,6 +67,8 @@ icon
                     background-color: rgba(255,255,255,0.32)
                     text-align: center
                     border-radius: 2px
+                    // 默认设置隐藏
+                    visibility: hidden
                     p
                         display: inline-block
                         margin: .3em .4em
@@ -75,6 +77,9 @@ icon
                         font:
                             family: Microsoft Yahei
                             size: 1.2em
+                // 添加显示类
+                title-icon__title.display
+                    visibility: inherit
                 // 图标部分
                 i__box
                     display: flex
