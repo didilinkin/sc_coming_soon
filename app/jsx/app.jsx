@@ -23,7 +23,6 @@ var ContentComponent = React.createClass({
         )
     }
 });
-
 // React生成Vdom
 ReactDOM.render(
     <ContentComponent></ContentComponent>,

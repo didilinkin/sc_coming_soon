@@ -29,7 +29,7 @@ window.onload = function () {
         timer = setInterval(function () {
             // 执行 更改图片
             changeImg()
-        }, 2000)
+        }, 3000)
     }
 
     play();
