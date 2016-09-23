@@ -28,9 +28,9 @@ contenttitle {
     contenttitle .contenttitle__box img {
       position: relative;
       animation: mymove 5s;
-      animation-iteration-count: 1s;
+      animation-iteration-count: 1.5s;
       /* Safari and Chrome */
-      -webkit-animation: mymove 1s;
+      -webkit-animation: mymove 1.5s;
       animation-iteration-count: 1;
       width: 55.21%;
       height: 63%;
@@ -40,56 +40,24 @@ contenttitle {
 @-webkit-keyframes mymove {
   0% {
     left: -370px; }
-  20% {
-    left: 200px; }
-  40% {
-    left: -100px; }
-  60% {
-    left: 100px; }
-  80% {
-    left: 5px; }
   100% {
     left: 0; } }
 
 @-moz-keyframes mymove {
   0% {
     left: -370px; }
-  20% {
-    left: 200px; }
-  40% {
-    left: -100px; }
-  60% {
-    left: 100px; }
-  80% {
-    left: 5px; }
   100% {
     left: 0; } }
 
 @-ms-keyframes mymove {
   contenttitle .contenttitle__box img 0% {
     left: -370px; }
-  contenttitle .contenttitle__box img 20% {
-    left: 200px; }
-  contenttitle .contenttitle__box img 40% {
-    left: -100px; }
-  contenttitle .contenttitle__box img 60% {
-    left: 100px; }
-  contenttitle .contenttitle__box img 80% {
-    left: 5px; }
   contenttitle .contenttitle__box img 100% {
     left: 0; } }
 
 @keyframes mymove {
   0% {
     left: -370px; }
-  20% {
-    left: 200px; }
-  40% {
-    left: -100px; }
-  60% {
-    left: 100px; }
-  80% {
-    left: 5px; }
   100% {
     left: 0; } }
   contenttitle .contenttitle__flex {
@@ -114,6 +82,8 @@ icon {
         margin-bottom: 1%; }
         icon .icon__box box title-icon title-icon__title {
           display: block;
+          padding-left: 1%;
+          padding-right: 1%;
           margin-bottom: .5rem;
           background-color: rgba(255, 255, 255, 0.32);
           text-align: center;
