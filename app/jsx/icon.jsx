@@ -17,7 +17,7 @@ function timeClean(){
     var _self = this;
     window.setTimeout(function(){
         cleanClass();
-    },1500);
+    },5000);
 }
 
 var IconComponent = React.createClass({
@@ -27,39 +27,39 @@ var IconComponent = React.createClass({
                 <div className="icon__box">
                     {/* 虚拟出来的标签——包住4个标题文字 */}
                     <box onmouseout={this.mouseOut} >   {/* 虚拟出来的标签——包住4个i标签  鼠标移除执行清除事件*/}
-                        <title-icon>    {/* 标题文字 与 icon图标的集合 */}
+                        <title-icon id="qq">    {/* 标题文字 与 icon图标的集合 */}
                             <title-icon__title id="qqId" className="">     {/* 文字盒子 */}
                                 <p>1234567890</p>
                             </title-icon__title>
                             <i__box>
-                                <i className="fa fa-qq" onClick={this.qqClick}></i>
+                                <i className="fa fa-qq"></i>
                             </i__box>
                         </title-icon>
 
-                        <title-icon>    {/* 标题文字 与 icon图标的集合 */}
+                        <title-icon id="weixin">    {/* 标题文字 与 icon图标的集合 */}
                             <title-icon__title id="weixinId" className="">     {/* 文字盒子 */}
                                 <p>1234567890</p>
                             </title-icon__title>
                             <i__box>
-                                <i className="fa fa-weixin" onClick={this.weixinClick}></i>
+                                <i className="fa fa-weixin"></i>
                             </i__box>
                         </title-icon>
 
-                        <title-icon>    {/* 标题文字 与 icon图标的集合 */}
+                        <title-icon id="phone">    {/* 标题文字 与 icon图标的集合 */}
                             <title-icon__title id="phoneId" className="">     {/* 文字盒子 */}
                                 <p>1234567890</p>
                             </title-icon__title>
                             <i__box>
-                                <i className="fa fa-phone" onClick={this.phoneClick}></i>
+                                <i className="fa fa-phone"></i>
                             </i__box>
                         </title-icon>
 
-                        <title-icon>    {/* 标题文字 与 icon图标的集合 */}
+                        <title-icon id="at">    {/* 标题文字 与 icon图标的集合 */}
                             <title-icon__title id="atId" className="">     {/* 文字盒子 */}
                                 <p>1234567890</p>
                             </title-icon__title>
                             <i__box>
-                                <i className="fa fa-at" onClick={this.atClick}></i>
+                                <i className="fa fa-at"></i>
                             </i__box>
                         </title-icon>
                         {/* 这个内容列表可以考虑使用数组的方法来调用 */}
@@ -73,25 +73,21 @@ var IconComponent = React.createClass({
         var qqId = document.getElementById("qqId")
         cleanClass();
         qqId.className = "display";
-        timeClean();
     },
     weixinClick:function(){
         var weixinId = document.getElementById("weixinId")
         cleanClass();
         weixinId.className = "display";
-        timeClean();
     },
     phoneClick:function(){
         var phoneId = document.getElementById("phoneId")
         cleanClass();
         phoneId.className = "display"
-        timeClean();
     },
     atClick:function(){
         var atId = document.getElementById("atId")
         cleanClass();
         atId.className = "display";
-        timeClean();
     }
 })
 

@@ -11,6 +11,19 @@
 =m-p($margin,$padding)
     margin: $margin
     padding: $padding
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+=title-icon($title-iconID,$titleID)
+    title-icon#{$title-iconID}:hover
+        title-icon__title#{$titleID}
+            visibility: inherit
 
 #content
     position: absolute
@@ -37,23 +50,44 @@ contenttitle
     .contenttitle__box
         flex: 3.0
         img
-            +w-h(55.21%,57.2%)
+            position: relative
+            animation: mymove 5s
+            // 重复次数
+            animation-iteration-count: 1s
+            /* Safari and Chrome */
+            -webkit-animation: mymove 1s
+            animation-iteration-count: 1
+            +keyframes(mymove)
+                0%
+                    left: -370px
+                20%
+                    left: 200px
+                40%
+                    left: -100px
+                60%
+                    left: 100px
+                80%
+                    left: 5px
+                100%
+                    left: 0
+            +w-h(55.21%,63%)
             margin:
-                top: 20.1%
+                top: 15%
                 left: 32.12%
     .contenttitle__flex
         flex: 2.0
 icon
     +contenttitle
     top: 58%
+    width: 70%
     color: #FFF
     .icon__box
         flex: 3
         // 虚拟出来的标签——包住4个i标签，控制样式一直保持跟上面的文字图片相同
         box
             display: flex
-            width: 70%
-            margin-left: 32.12%
+            width: 44%
+            margin-left: 42.12%
             title-icon
                 flex: 1
                 margin-bottom: 1%
@@ -61,9 +95,7 @@ icon
                 title-icon__title
                     display: block
                     margin:
-                        right: 3%
                         bottom: .5rem
-                        left: 3%
                     background-color: rgba(255,255,255,0.32)
                     text-align: center
                     border-radius: 2px
@@ -71,12 +103,12 @@ icon
                     visibility: hidden
                     p
                         display: inline-block
-                        margin: .3em .4em
+                        margin: .3em .1em
                         color: #FFF
                         cursor: pointer
                         font:
                             family: Microsoft Yahei
-                            size: 1.2em
+                            size: 1em
                 // 添加显示类
                 title-icon__title.display
                     visibility: inherit
@@ -91,6 +123,23 @@ icon
                         color: #FFF
                         &:hover
                             color: rgba(255,255,255,0.4)
+            // 添加鼠标经过事件
+            // qq
+            title-icon#qq:hover
+                title-icon__title#qqId
+                    visibility: inherit
+            // weixin
+            title-icon#weixin:hover
+                title-icon__title#weixinId
+                    visibility: inherit
+            // phone
+            title-icon#phone:hover
+                title-icon__title#phoneId
+                    visibility: inherit
+            // at
+            title-icon#at:hover
+                title-icon__title#atId
+                    visibility: inherit
     .icon__flex
         flex: 2
 logo

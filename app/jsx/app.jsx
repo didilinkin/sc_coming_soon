@@ -30,19 +30,19 @@ var ContentComponent = React.createClass({
             <div>
                 <BgImgChangeComponent></BgImgChangeComponent>
                 <ContentTitleComponent></ContentTitleComponent>
-                <test listArr = {this.props.listArr}>
+                {/* <test listArr = {this.props.listArr}>
                     {
                         this.props.listArr.map(function(item,index){
                             return <Test key={index} {...item} />
                         }.bind(this))
                     }
-                </test>
+                </test> */}
             </div>
         )
     }
 });
 // React生成Vdom
 ReactDOM.render(
-    <ContentComponent listArr = {listArr}/>,
+    <ContentComponent/>,
     document.getElementById("content")
 );
