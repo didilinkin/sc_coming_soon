@@ -12,14 +12,13 @@ function cleanClass(){
     atId.className="";
 }
 
-var titleTag = document.getElementsByTagName("title-icon__title")
-var qqId = document.getElementById("qqId")
-var weixinId = document.getElementById("weixinId")
-var phoneId = document.getElementById("phoneId")
-var atId = document.getElementById("atId")
-
-
-
+// 计时器清理程序
+function timeClean(){
+    var _self = this;
+    window.setTimeout(function(){
+        cleanClass();
+    },1500);
+}
 
 var IconComponent = React.createClass({
     render:function(){
@@ -74,36 +73,25 @@ var IconComponent = React.createClass({
         var qqId = document.getElementById("qqId")
         cleanClass();
         qqId.className = "display";
+        timeClean();
     },
     weixinClick:function(){
         var weixinId = document.getElementById("weixinId")
         cleanClass();
-        weixinId.className = "display"
+        weixinId.className = "display";
+        timeClean();
     },
     phoneClick:function(){
         var phoneId = document.getElementById("phoneId")
         cleanClass();
         phoneId.className = "display"
+        timeClean();
     },
     atClick:function(){
         var atId = document.getElementById("atId")
         cleanClass();
-        atId.className = "display"
-    },
-    // 鼠标移除事件
-    mouseOut:function(){
-        console.log("aaa");
-        function cleanClass(){
-            var qqId = document.getElementById("qqId")
-            var weixinId = document.getElementById("weixinId")
-            var phoneId = document.getElementById("phoneId")
-            var atId = document.getElementById("atId")
-            qqId.className="";
-            weixinId.className="";
-            phoneId.className="";
-            atId.className="";
-        }
-        cleanClass();
+        atId.className = "display";
+        timeClean();
     }
 })
 
