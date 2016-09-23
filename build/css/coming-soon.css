@@ -1,0 +1,165 @@
+#content {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; }
+  #content #bgimg-list {
+    z-index: 1;
+    object-fit: contain; }
+    #content #bgimg-list img {
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      width: 100%; }
+    #content #bgimg-list img.js-imgDisplay {
+      position: absolute;
+      z-index: 2;
+      filter: alpha(Opacity=100);
+      opacity: 1; }
+
+contenttitle {
+  display: flex;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  top: 0; }
+  contenttitle .contenttitle__box {
+    flex: 3.0; }
+    contenttitle .contenttitle__box img {
+      position: relative;
+      animation: mymove 5s;
+      animation-iteration-count: 1s;
+      /* Safari and Chrome */
+      -webkit-animation: mymove 1s;
+      animation-iteration-count: 1;
+      width: 55.21%;
+      height: 63%;
+      margin-top: 15%;
+      margin-left: 32.12%; }
+
+@-webkit-keyframes mymove {
+  0% {
+    left: -370px; }
+  20% {
+    left: 200px; }
+  40% {
+    left: -100px; }
+  60% {
+    left: 100px; }
+  80% {
+    left: 5px; }
+  100% {
+    left: 0; } }
+
+@-moz-keyframes mymove {
+  0% {
+    left: -370px; }
+  20% {
+    left: 200px; }
+  40% {
+    left: -100px; }
+  60% {
+    left: 100px; }
+  80% {
+    left: 5px; }
+  100% {
+    left: 0; } }
+
+@-ms-keyframes mymove {
+  contenttitle .contenttitle__box img 0% {
+    left: -370px; }
+  contenttitle .contenttitle__box img 20% {
+    left: 200px; }
+  contenttitle .contenttitle__box img 40% {
+    left: -100px; }
+  contenttitle .contenttitle__box img 60% {
+    left: 100px; }
+  contenttitle .contenttitle__box img 80% {
+    left: 5px; }
+  contenttitle .contenttitle__box img 100% {
+    left: 0; } }
+
+@keyframes mymove {
+  0% {
+    left: -370px; }
+  20% {
+    left: 200px; }
+  40% {
+    left: -100px; }
+  60% {
+    left: 100px; }
+  80% {
+    left: 5px; }
+  100% {
+    left: 0; } }
+  contenttitle .contenttitle__flex {
+    flex: 2.0; }
+
+icon {
+  display: flex;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  top: 58%;
+  width: 70%;
+  color: #FFF; }
+  icon .icon__box {
+    flex: 3; }
+    icon .icon__box box {
+      display: flex;
+      width: 44%;
+      margin-left: 42.12%; }
+      icon .icon__box box title-icon {
+        flex: 1;
+        margin-bottom: 1%; }
+        icon .icon__box box title-icon title-icon__title {
+          display: block;
+          margin-bottom: .5rem;
+          background-color: rgba(255, 255, 255, 0.32);
+          text-align: center;
+          border-radius: 2px;
+          visibility: hidden; }
+          icon .icon__box box title-icon title-icon__title p {
+            display: inline-block;
+            margin: .3em .1em;
+            color: #FFF;
+            cursor: pointer;
+            font-family: Microsoft Yahei;
+            font-size: 1em; }
+        icon .icon__box box title-icon title-icon__title.display {
+          visibility: inherit; }
+        icon .icon__box box title-icon i__box {
+          display: flex;
+          justify-content: center; }
+          icon .icon__box box title-icon i__box i {
+            font-size: 2rem !important;
+            text-align: center;
+            cursor: pointer;
+            color: #FFF; }
+            icon .icon__box box title-icon i__box i:hover {
+              color: rgba(255, 255, 255, 0.4); }
+      icon .icon__box box title-icon#qq:hover title-icon__title#qqId {
+        visibility: inherit; }
+      icon .icon__box box title-icon#weixin:hover title-icon__title#weixinId {
+        visibility: inherit; }
+      icon .icon__box box title-icon#phone:hover title-icon__title#phoneId {
+        visibility: inherit; }
+      icon .icon__box box title-icon#at:hover title-icon__title#atId {
+        visibility: inherit; }
+  icon .icon__flex {
+    flex: 2; }
+
+logo {
+  display: flex;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  bottom: 0; }
+  logo .logo__flex {
+    flex: 4.15; }
+  logo logo-box {
+    flex: 1.7; }
+    logo logo-box img {
+      width: 100%;
+      object-fit: contain;
+      margin-bottom: 29.85%; }

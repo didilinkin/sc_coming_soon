@@ -26,7 +26,7 @@ var IconComponent = React.createClass({
             <icon>
                 <div className="icon__box">
                     {/* 虚拟出来的标签——包住4个标题文字 */}
-                    <box onmouseout={this.mouseOut} >   {/* 虚拟出来的标签——包住4个i标签  鼠标移除执行清除事件*/}
+                    <box>   {/* 虚拟出来的标签——包住4个i标签  鼠标移除执行清除事件*/}
                         <title-icon id="qq">    {/* 标题文字 与 icon图标的集合 */}
                             <title-icon__title id="qqId" className="">     {/* 文字盒子 */}
                                 <p>1234567890</p>
@@ -68,26 +68,6 @@ var IconComponent = React.createClass({
                 <div className="icon__flex"></div>
             </icon>
         )
-    },
-    qqClick:function(){
-        var qqId = document.getElementById("qqId")
-        cleanClass();
-        qqId.className = "display";
-    },
-    weixinClick:function(){
-        var weixinId = document.getElementById("weixinId")
-        cleanClass();
-        weixinId.className = "display";
-    },
-    phoneClick:function(){
-        var phoneId = document.getElementById("phoneId")
-        cleanClass();
-        phoneId.className = "display"
-    },
-    atClick:function(){
-        var atId = document.getElementById("atId")
-        cleanClass();
-        atId.className = "display";
     }
 })
 
